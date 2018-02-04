@@ -24,6 +24,7 @@
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
                     />
                 <View
                     android:layout_width="match_parent"
@@ -92,7 +93,6 @@
     </com.example.xyzreader.ui.ObservableScrollView>
     <android.support.design.widget.FloatingActionButton
         android:stateListAnimator="@anim/fab_state_list_anim"
-        android:background="@drawable/add_fab_background"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="@dimen/fab_margin"

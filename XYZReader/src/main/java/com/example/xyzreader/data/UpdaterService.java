@@ -1,18 +1,24 @@
 package com.example.xyzreader.data;
 
+import android.app.Activity;
 import android.app.IntentService;
 import android.content.ContentProviderOperation;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.RemoteException;
+import android.support.design.widget.Snackbar;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.View;
 
+import com.example.xyzreader.R;
 import com.example.xyzreader.remote.RemoteEndpointUtil;
+import com.example.xyzreader.ui.ArticleListActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,6 +46,7 @@ public class UpdaterService extends IntentService {
         NetworkInfo ni = cm.getActiveNetworkInfo();
         if (ni == null || !ni.isConnected()) {
             Log.w(TAG, "Not online, not refreshing.");
+
             return;
         }
 
