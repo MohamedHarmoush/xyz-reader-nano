@@ -12,7 +12,7 @@ public class ImageLoaderHelper {
     private static ImageLoaderHelper sInstance;
 
     public static ImageLoaderHelper getInstance(Context context) {
-        if (sInstance == null) {
+        if (sInstance==null) {
             sInstance = new ImageLoaderHelper(context.getApplicationContext());
         }
 
